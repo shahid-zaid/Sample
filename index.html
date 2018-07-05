@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task</title>
+</head>
+<body>
+    <div ng-controller="myCtr">
+        <h2>SOCIAL NETWORKING SITES</h2>
+        <br>
+        <table border= "1">
+            <tr>
+                <th>Name</th>
+                <th>Users</th>
+                <th>Development Language</th>
+                <th>Remove</th>
+            </tr>
+            <tr ng-repeat="network in networks">
+                <td>{{network.name}}</td>
+                <td>{{network.users}}</td>
+                <td>{{network.devlopmentLang}}</td>
+                <td ng-click="removeNetwork(network)">X</td>
+            </tr>
+        </table>
+
+        <br/>
+        <br/>
+
+        <h2>Add Data</h2><br/>
+    
+
+        <form ng-submit="addNetworks()">
+                <input type="text" placeholder="name" ng-model="newName"><br/>
+                <input type="text" placeholder="users" ng-model="newUsers"><br/>
+                <input type="text" placeholder="devLang" ng-model="newDev"><br/>
+        
+                <input type="submit" value="Add Network" >
+            </form>
+
+    </div>
+
+    
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
